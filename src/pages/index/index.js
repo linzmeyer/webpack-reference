@@ -8,4 +8,3 @@ console.log('adios');
 console.log('word');
 
 document.body.append(component());
-document.head.append( BaseURL( baseURL ) );
