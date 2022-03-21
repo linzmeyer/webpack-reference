@@ -72,7 +72,6 @@ module.exports = {
       filename: 'index.html',
       template: 'src/pages/index/index.html',
       chunks: ['index', 'addBaseUrl'],
-      // chunks: ['main'],
     }),
     // To generate more than one HTML file, declare the plugin more than once in your plugins array
     new HtmlWebpackPlugin({
@@ -80,14 +79,17 @@ module.exports = {
       filename: 'about.html',
       template: 'src/pages/about/index.html',
       chunks: ['about', 'addBaseUrl'],
-      // chunks: ['about'],
     }),
     new HtmlWebpackPlugin({
       title: 'Contact Us',
       filename: 'contact-us.html',
       template: 'src/pages/contact-us/index.html',
       chunks: ['contact-us', 'addBaseUrl'],
-      // chunks: ['contact-us'],
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Users ...id...',
+      filename: '/users/[id]/index.html',
+      template: 'src/pages/users/[id]/index.html',
     }),
   ],
 
