@@ -1,7 +1,7 @@
-function base( url ) {
+function BaseUrl( url ) {
   let base = document.createElement('base')
   base.href = url;
   return base;
 }
 
-export default base;
+export default BaseUrl;

@@ -7,11 +7,11 @@ module.exports = {
   mode: 'development',  // or production
   entry: {
     // pages
-    "index": path.resolve(__dirname, 'src/pages/index/index.js'),
-    "about": path.resolve(__dirname, 'src/pages/about/index.js'),
+    "main": path.resolve(__dirname, './src/pages/index/index.js'),
+    "about": path.resolve(__dirname, './src/pages/about/index.js'),
     "contact-us": path.resolve(__dirname, 'src/pages/contact-us/index.js'),
     // modules
-    "addBaseUrl": path.resolve(__dirname, 'src/modules/addBaseUrl.js'),
+    "addBaseUrl": path.resolve(__dirname, './src/modules/addBaseUrl.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -71,23 +71,23 @@ module.exports = {
       title: 'Just a Demo',
       filename: 'index.html',
       template: 'src/pages/index/index.html',
-      // chunks: ['index', 'addBaseUrl'],
-      chunks: ['index'],
+      chunks: ['index', 'addBaseUrl'],
+      // chunks: ['main'],
     }),
     // To generate more than one HTML file, declare the plugin more than once in your plugins array
     new HtmlWebpackPlugin({
       title: 'About',
       filename: 'about.html',
       template: 'src/pages/about/index.html',
-      // chunks: ['about', 'addBaseUrl'],
-      chunks: ['about'],
+      chunks: ['about', 'addBaseUrl'],
+      // chunks: ['about'],
     }),
     new HtmlWebpackPlugin({
       title: 'Contact Us',
       filename: 'contact-us.html',
       template: 'src/pages/contact-us/index.html',
-      // chunks: ['contact-us', 'addBaseUrl'],
-      chunks: ['contact-us'],
+      chunks: ['contact-us', 'addBaseUrl'],
+      // chunks: ['contact-us'],
     }),
   ],
 
