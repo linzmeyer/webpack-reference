@@ -1,3 +1,3 @@
 module.exports = {
-  baseURL: 'https://www.clinztesting.com'
+  baseURL: 'https://www.clinztesting.com/webpack-build'
 };
