@@ -4,8 +4,10 @@
   "description": "- webpack.config.js goes in the root folder of your project - package.json goes in the root folder of your project",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "dev": "webpack serve"
+    "dev-v1": "webpack serve",
+    "dev": "webpack serve --open --config webpack.dev.js",
+    "build-v1": "webpack",
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",

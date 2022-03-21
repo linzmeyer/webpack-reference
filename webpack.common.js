@@ -4,7 +4,7 @@ const TerserPlugin = require("terser-webpack-plugin");  // for minifying
 
 
 module.exports = {
-  mode: 'development',  // or production
+
   entry: {
     // pages
     "index": path.resolve(__dirname, './src/pages/index/index.js'),
@@ -13,23 +13,12 @@ module.exports = {
     // modules
     "addBaseUrl": path.resolve(__dirname, './src/modules/addBaseUrl.js'),
   },
+
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
     assetModuleFilename: '[name][ext]',  // for images, etc
     clean: true,  // empty the dist folder on run of webpack
-  },
-
-  // dev server & HMR
-  devtool: 'inline-source-map',  // tell the browser where a file came from
-  devServer: {
-    // contentBase: path.resolve(__dirname, 'dist'),  // depricated, don't use contentBase
-    // watchContentBase: true,  // don't use watchContentBase
-    static: path.resolve(__dirname, 'dist'),  // new way
-    port: 5001,  // default 8080
-    open: false,  // opens the app in a new tab
-    hot: true,  // adds HMR
-    watchFiles: [path.resolve(__dirname, 'src')]
   },
 
   // loaders
@@ -70,33 +59,34 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Just a Demo',
       filename: 'index.html',
-      template: 'src/pages/index/index.html',
+      template: './src/pages/index/index.html',
       chunks: ['index', 'addBaseUrl'],
     }),
     // To generate more than one HTML file, declare the plugin more than once in your plugins array
     new HtmlWebpackPlugin({
       title: 'About',
       filename: 'about.html',
-      template: 'src/pages/about/index.html',
+      template: './src/pages/about/index.html',
       chunks: ['about', 'addBaseUrl'],
     }),
     new HtmlWebpackPlugin({
       title: 'Contact Us',
       filename: 'contact-us.html',
-      template: 'src/pages/contact-us/index.html',
+      template: './src/pages/contact-us/index.html',
       chunks: ['contact-us', 'addBaseUrl'],
     }),
-    new HtmlWebpackPlugin({
-      title: 'Users ...id...',
-      filename: '/users/[id]/index.html',
-      template: 'src/pages/users/[id]/index.html',
-    }),
+    // new HtmlWebpackPlugin({
+    //   title: 'Users ...id...',
+    //   filename: '/users/[id]/index.html',
+    //   template: './src/pages/users/[id]/index.html',
+    // }),
   ],
 
-  optimization: {
-    // this TerserPlugin handles minimizing the code
-    minimize: true,
-    minimizer: [new TerserPlugin()],
-  },
-}
-
+  // NOT SURE IF THIS IS NECESSARY
+  // I think webpack 5 automatically minifies in production mode
+  // optimization: {
+  //   // this TerserPlugin handles minimizing the code
+  //   minimize: true,
+  //   minimizer: [new TerserPlugin()],
+  // },
+};
