@@ -7,7 +7,7 @@ module.exports = {
   mode: 'development',  // or production
   entry: {
     // pages
-    "main": path.resolve(__dirname, './src/pages/index/index.js'),
+    "index": path.resolve(__dirname, './src/pages/index/index.js'),
     "about": path.resolve(__dirname, './src/pages/about/index.js'),
     "contact-us": path.resolve(__dirname, 'src/pages/contact-us/index.js'),
     // modules
