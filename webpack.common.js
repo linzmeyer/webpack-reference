@@ -59,26 +59,26 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Just a Demo',
       filename: 'index.html',
-      template: './src/pages/index/index.html',
+      template: 'src/pages/index/index.html',
       chunks: ['index', 'addBaseUrl'],
     }),
     // To generate more than one HTML file, declare the plugin more than once in your plugins array
     new HtmlWebpackPlugin({
       title: 'About',
       filename: 'about.html',
-      template: './src/pages/about/index.html',
+      template: 'src/pages/about/index.html',
       chunks: ['about', 'addBaseUrl'],
     }),
     new HtmlWebpackPlugin({
       title: 'Contact Us',
       filename: 'contact-us.html',
-      template: './src/pages/contact-us/index.html',
+      template: 'src/pages/contact-us/index.html',
       chunks: ['contact-us', 'addBaseUrl'],
     }),
     // new HtmlWebpackPlugin({
     //   title: 'Users ...id...',
     //   filename: '/users/[id]/index.html',
-    //   template: './src/pages/users/[id]/index.html',
+    //   template: 'src/pages/users/[id]/index.html',
     // }),
   ],
 
